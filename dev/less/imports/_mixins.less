@@ -1,0 +1,17 @@
+.grid-univers(@name, @count, @i: 1) when (@i <= @count){
+	.@{name}@{i}{
+		width: @i * (100% / @count);
+	}
+	.grid-univers(@name, @count, @i+1);
+}
+.inline-block(@va:top){
+	display: inline-block;
+	vertical-align: @va;
+}
+.pad-top-bottom{
+	padding-top: 37px;
+	padding-bottom: 37px;
+}
+.float-right{
+	float:right;
+}

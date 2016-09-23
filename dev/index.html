@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width">
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/general.css">
+	<style>
+		.inside div{
+			padding:0 !important;
+		}
+	</style>
+</head>
+<body>
+	<!--#insert file="html/-katalog.html"-->
+	<script src="bootstrap.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script>
+	
+		  $('li').click(function(){
+
+		  	var kat = '.'+this.dataset.target;
+			                          // $(kat).children().children().on('opac',function(){
+                             //         console.log('1'+this);
+                             //        $(this).show(4000, function(){
+	                            //        console.log($(this).next());
+                             //        	$(this).next().trigger('opac');
+                             //    });
+                             //                               });
+                                       $(kat).children().children().eq(0).trigger('opac');
+			                          $('li').css('transform','');
+			                          $(this).css('transform','translateX(50px)');
+                                       $('.sc').css('display','none');
+                                       $(kat).css('display','block') ; 
+                                       $('.es').css('display','none');	
+		                            });
+		$('.subcategory>div img').on('click', function(){
+                                      var hot = '#'+this.dataset.rule;
+                                      $('.es').css('display','none');
+                                       $(hot).css('display','block') 
+		});
+
+		$('#open').click(function(){
+			if($('#open').is('.open')){
+				funClous();
+			}else{funOpenClass()
+console.log($('#open').is('.open'));
+			}
+			});
+
+			
+			
+			$('li').click(funClous);
+			$('#clous').click(funClous);
+           
+	
+		function funClous(){
+			$('.categories-wrapp-xs').slideUp(1000);
+			$('#open').removeClass('open');
+		}
+		function funOpenClass(){
+			$('.categories-wrapp-xs').slideDown(1000);
+				$('#open').addClass('open');
+
+		}
+	</script>
+</body>
+</html>
